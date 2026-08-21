@@ -404,7 +404,16 @@ def main() -> int:
     site = field(config, "url", FALLBACK_SITE_URL).rstrip("/")
 
     cached = load_cache()
-    empty = {"year": datetime.now(KST).year, "as_of": "", "members": []}
+    current_year = datetime.now(KST).year
+    empty = {"year": current_year, "as_of": "", "members": []}
+
+    # 집계 연도는 실행 시점 기준으로 자동으로 넘어간다. 다만 일간 실행은 활동을
+    # 갱신하지 않으므로, 해가 바뀐 직후에는 첫 주간 실행 전까지 지난해 집계가
+    # 남는다. 캐시 연도가 올해와 다르면 요일과 무관하게 갱신한다.
+    if not refresh_activity and cached and cached.get("year") != current_year:
+        log(f"캐시가 {cached.get('year')}년 집계라 {current_year}년으로 강제 갱신합니다")
+        refresh_activity = True
+
     if refresh_activity:
         log(f"멤버 활동 수집 중 (연동 동의 {len(opted_in_members(members))}명)")
         try:
