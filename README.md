@@ -72,7 +72,7 @@
 | 연구 분야 | `_data/research.yml` |
 | 프로젝트 | `_data/projects.yml` |
 | 연구실 소식 | `_data/news.yml` |
-| 주요 논문 | `_data/publications.yml` |
+| 최근 논문 | `_data/publications.yml` |
 | 멤버 활동 | `_data/members.yml` |
 
 소개 문구, 상단 링크처럼 홈페이지에 대응하는 데이터가 없는 부분은

@@ -88,7 +88,7 @@
 [전체 소식 보기 →](https://cilab.jbnu.ac.kr/news/)
 <!-- AUTO:NEWS:END -->
 
-## 주요 논문
+## 최근 논문
 
 <!-- AUTO:PUBLICATIONS:START -->
 - **[Native Stack 기반 웹어셈블리 인터프리터에서의 Tail Call Optimization 설계 및 구현](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12929755)** 🏆 우수논문상
@@ -108,7 +108,7 @@
 ## 멤버 활동
 
 <!-- AUTO:ACTIVITY:START -->
-> 2026년 1월 1일부터 집계한 연구실·오픈소스 프로젝트 저장소 공개 기여 내역입니다. 사이트 저장소의 `members.yml` 에서 `github_activity` 를 활성화한 멤버만 표시되며, 비공개 저장소와 비공개 기여는 집계에서 제외됩니다.
+> 2026년 1월 1일부터 집계한 연구실·오픈소스 프로젝트 저장소 공개 기여 내역입니다. 비공개 저장소와 비공개 기여는 집계에서 제외됩니다.
 
 | 멤버 | 활동 저장소 |
 | --- | --- |
@@ -121,10 +121,3 @@
 
 2026년 연구실 전체 — 공개 저장소 **6**곳에 커밋 **221**건, Pull Request **42**건.
 <!-- AUTO:ACTIVITY:END -->
-
----
-
-<sub>이 페이지의 내용은 연구실 홈페이지 저장소에서 자동으로 생성됩니다.
-내용을 바꾸려면
-[JBNU-CILAB.github.io/_data](https://github.com/JBNU-CILAB/JBNU-CILAB.github.io/tree/main/_data)
-의 해당 파일을 수정하세요.</sub>

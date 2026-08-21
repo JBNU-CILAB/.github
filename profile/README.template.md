@@ -39,7 +39,7 @@
 <!-- AUTO:NEWS:START -->
 <!-- AUTO:NEWS:END -->
 
-## 주요 논문
+## 최근 논문
 
 <!-- AUTO:PUBLICATIONS:START -->
 <!-- AUTO:PUBLICATIONS:END -->
@@ -48,10 +48,3 @@
 
 <!-- AUTO:ACTIVITY:START -->
 <!-- AUTO:ACTIVITY:END -->
-
----
-
-<sub>이 페이지의 내용은 연구실 홈페이지 저장소에서 자동으로 생성됩니다.
-내용을 바꾸려면
-[JBNU-CILAB.github.io/_data](https://github.com/JBNU-CILAB/JBNU-CILAB.github.io/tree/main/_data)
-의 해당 파일을 수정하세요.</sub>
