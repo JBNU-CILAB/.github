@@ -1,4 +1,4 @@
-name: 조직 프로필 갱신
+name: Update organization profile
 
 # 홈페이지 저장소는 데이터가 바뀌어도 이 저장소에 알려줄 수 없으므로 스케줄로
 # 동작한다. 하는 일이 다른 cron 두 개를 둔다.
@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
     inputs:
       refresh_activity:
-        description: 멤버 활동도 GitHub API 로 갱신할지 여부
+        description: Also refresh member activity from the GitHub API
         type: boolean
         default: true
 
@@ -44,7 +44,7 @@ jobs:
 
       - run: pip install -r scripts/requirements.txt
 
-      - name: profile/README.md 생성
+      - name: Render profile/README.md
         env:
           # 저장소 범위 토큰이라 비공개 저장소를 읽을 수 없다. 멤버 활동을
           # 공개 기여로만 한정하려는 의도와 정확히 맞는다.
@@ -73,16 +73,16 @@ jobs:
           echo "refresh_activity=$REFRESH_ACTIVITY"
           REFRESH_ACTIVITY="$REFRESH_ACTIVITY" python scripts/build_profile.py
 
-      - name: 변경된 경우에만 커밋
+      - name: Commit if changed
         run: |
           set -euo pipefail
           TARGETS='profile/README.md data/activity-cache.json'
           if [ -z "$(git status --porcelain -- $TARGETS)" ]; then
-            echo '변경 사항 없음 — 커밋하지 않습니다.'
+            echo 'Nothing changed; not committing.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- $TARGETS
-          git commit -m 'chore: 홈페이지 데이터로 조직 프로필 갱신'
+          git commit -m 'chore: refresh org profile from site data'
           git push
