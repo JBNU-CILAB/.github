@@ -204,8 +204,9 @@ def fetch_activity(members: list, lab_repos: set) -> dict:
 
     return {
         "year": now.year,
+        # 데이터가 마지막으로 "바뀐" 날짜. 마지막으로 조회한 날짜가 아니다.
+        # 아래 main() 에서 내용이 동일하면 캐시를 다시 쓰지 않기 때문이다.
         "as_of": now.strftime("%Y-%m-%d"),
-        "window": window,
         "members": rows,
     }
 
@@ -323,14 +324,13 @@ def render_publications(publications: list, site: str) -> str:
 
 def render_activity(activity: dict) -> str:
     year = activity.get("year", "")
-    as_of = activity.get("as_of", "")
     active = [m for m in activity.get("members", []) if m["repos"]]
 
     lines = [
-        f"> {year}년 연구실·오픈소스 프로젝트 저장소에 대한 공개 기여 내역입니다"
-        + (f" ({as_of} 기준)." if as_of else ".")
-        + " 사이트 저장소의 `members.yml` 에서 `github_activity` 를 활성화한"
-        " 멤버만 표시되며, 비공개 저장소와 비공개 기여는 집계에서 제외됩니다.",
+        f"> {year}년 1월 1일부터 집계한 연구실·오픈소스 프로젝트 저장소 공개 기여"
+        " 내역입니다. 사이트 저장소의 `members.yml` 에서 `github_activity` 를"
+        " 활성화한 멤버만 표시되며, 비공개 저장소와 비공개 기여는 집계에서"
+        " 제외됩니다.",
         "",
     ]
 
@@ -411,11 +411,16 @@ def main() -> int:
         log(f"멤버 활동 수집 중 (연동 동의 {len(opted_in_members(members))}명)")
         try:
             activity = fetch_activity(members, lab_repositories(projects))
-            CACHE.parent.mkdir(parents=True, exist_ok=True)
-            CACHE.write_text(
-                json.dumps(activity, indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-            )
+            if cached and cached.get("members") == activity["members"] \
+                    and cached.get("year") == activity["year"]:
+                log("  · 활동 내역에 변화가 없어 캐시를 유지합니다")
+                activity = cached
+            else:
+                CACHE.parent.mkdir(parents=True, exist_ok=True)
+                CACHE.write_text(
+                    json.dumps(activity, indent=2, ensure_ascii=False) + "\n",
+                    encoding="utf-8",
+                )
         except Exception as exc:  # 네트워크 / rate limit / 스키마 변경
             log(f"  ! 활동 갱신 실패: {exc}")
             if cached is None:
