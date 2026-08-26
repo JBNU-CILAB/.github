@@ -14,7 +14,7 @@
 
 # Compiler Intelligence Lab (CILAB)
 
-**Jeonbuk National University** · Division of Computer Science and Artificial Intelligence
+**Jeonbuk National University** · Department of Computer Science and Artificial Intelligence
 
 We study how code runs, and how to make it run faster — across web engines,
 LLM-based systems, and AI compilers. The work is empirical: we profile real
