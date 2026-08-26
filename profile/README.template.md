@@ -2,9 +2,8 @@
   =============================================================================
   이 파일이 조직 프로필 페이지의 원본입니다. 직접 편집하는 파일은 이쪽입니다.
 
-  AUTO:<이름>:START / AUTO:<이름>:END 마커 바깥은 자유롭게 수정할 수 있으며
-  그대로 보존됩니다. 마커 안쪽은 JBNU-CILAB.github.io/_data 의 내용으로
-  update-profile 워크플로가 매번 다시 생성합니다.
+  AUTO:<이름>:START / AUTO:<이름>:END 마커 안쪽만 update-profile 워크플로가
+  자동으로 생성합니다. 그 바깥은 전부 수기로 관리하며 그대로 보존됩니다.
 
   profile/README.md 는 생성물이므로 직접 편집하지 마세요. 덮어써집니다.
 
@@ -13,38 +12,36 @@
   =============================================================================
 -->
 
-<!-- AUTO:HEADER:START -->
-<!-- AUTO:HEADER:END -->
+# Compiler Intelligence Lab (CILAB)
 
-코드가 어떻게 실행되는지, 그리고 어떻게 하면 더 빠르게 실행할 수 있는지를
-연구합니다. 실제로 널리 쓰이는 엔진을 직접 프로파일링해 병목을 찾고, 개선한
-결과가 실사용 코드에 반영되도록 하는 실증적 접근을 지향합니다.
+**Jeonbuk National University** · Division of Computer Science and Artificial Intelligence
 
-[홈페이지](https://cilab.jbnu.ac.kr) · [구성원](https://cilab.jbnu.ac.kr/people/) · [연락처](https://cilab.jbnu.ac.kr/contact/)
+We study how code runs, and how to make it run faster — across web engines,
+LLM-based systems, and AI compilers. The work is empirical: we profile real
+engines, find the bottlenecks, and upstream the fixes.
 
----
+[cilab.jbnu.ac.kr](https://cilab.jbnu.ac.kr)
 
-## 연구 분야
+## Projects
 
-<!-- AUTO:RESEARCH:START -->
-<!-- AUTO:RESEARCH:END -->
+**Open source we contribute to**
 
-## 프로젝트
+| Project | Description |
+| --- | --- |
+| [**Escargot**](https://github.com/Samsung/escargot) | Lightweight JavaScript engine for memory-constrained devices, supporting modern ECMAScript in a small footprint. We analyze its internals and work on performance and memory optimizations. |
+| [**Walrus**](https://github.com/Samsung/walrus) | Lightweight WebAssembly runtime with full standard support, built around an interpreter with JIT compilation underway. We work on execution performance. |
+| [**lwnode**](https://github.com/Samsung/lwnode) | Memory-efficient Node.js implementation running on top of Escargot, targeting consumer devices such as phones, watches, and TVs. |
 
-<!-- AUTO:PROJECTS:START -->
-<!-- AUTO:PROJECTS:END -->
+**Built in the lab**
 
-## 연구실 소식
+| Project | Description |
+| --- | --- |
+| [**Escargot Review Bot**](https://github.com/JBNU-CILAB/escargot-review-bot) | Self-hosted AI reviewer for Escargot pull requests. Four LLM passes — defect, refactoring, compiler, and style — feed a judge stage that merges overlapping findings into inline comments, running entirely on a local LLM. |
+| [**JCodeQuest**](https://github.com/JBNU-CILAB/JCodeQuest) | Gamified platform for algorithm practice, with LLM-generated problems, three-judge ensemble grading, real-time code battles, and automatic plagiarism checks. |
+| [**demucs-lite**](https://github.com/JBNU-CILAB/demucs-lite) | Compressing the Demucs source-separation model to run on mobile. FP16/INT8 quantization and audio chunking bring inference for one second of audio to roughly 100 ms on a Qualcomm NPU. |
+| **Iron Device Simulator** <br><sub>private</sub> | Web dashboard for a speaker protection library, visualizing speaker temperature and diaphragm displacement in real time from audio files or live microphone input. Built as an industry collaboration project. |
 
-<!-- AUTO:NEWS:START -->
-<!-- AUTO:NEWS:END -->
-
-## 최근 논문
-
-<!-- AUTO:PUBLICATIONS:START -->
-<!-- AUTO:PUBLICATIONS:END -->
-
-## 멤버 활동
+## Member Activity
 
 <!-- AUTO:ACTIVITY:START -->
 <!-- AUTO:ACTIVITY:END -->

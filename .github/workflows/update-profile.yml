@@ -1,21 +1,28 @@
 name: Update organization profile
 
-# 홈페이지 저장소는 데이터가 바뀌어도 이 저장소에 알려줄 수 없으므로 스케줄로
-# 동작한다. 하는 일이 다른 cron 두 개를 둔다.
+# 자동 생성되는 부분은 멤버 활동 섹션 하나뿐이므로 트리거도 셋만 둔다.
 #
-#   매일   홈페이지 저장소의 YAML 로 profile/README.md 를 다시 렌더링한다.
-#          GraphQL 호출이 없어 가볍고, 콘텐츠 수정이 하루 안에 반영된다.
-#   매주   위와 동일 + GitHub API 로 멤버 활동을 갱신한다. 기여 수치는 멤버가
-#          커밋하는 것만으로 저절로 변하므로, 매일 갱신하면 봇 커밋이 매일 쌓인다.
+#   push     템플릿이나 렌더러가 바뀌면 즉시 다시 렌더링한다. 활동은 캐시를
+#            그대로 쓴다. 봇이 쓰는 파일(profile/README.md, data/) 은 경로
+#            필터에 없고, GITHUB_TOKEN 으로 만든 푸시는 애초에 워크플로를
+#            트리거하지 않으므로 자기 자신을 다시 부르지 않는다.
+#   schedule 주 1회 멤버 활동을 갱신한다. 기여 수치는 멤버가 커밋하는 것만으로
+#            저절로 변하므로, 더 자주 돌리면 의미 없는 봇 커밋이 쌓인다.
+#   수동     workflow_dispatch. 기본적으로 활동까지 갱신한다.
 #
-# workflow_dispatch 는 수동 실행용이며 기본적으로 전체를 갱신한다.
-# 참고: GitHub 은 공개 저장소에서 60일간 활동이 없으면 예약 워크플로를
-# 비활성화한다. 매주 발생하는 커밋이 이를 막아주며, 비활성화 전에 조직
-# 소유자에게 메일이 발송된다.
+# 참고: GitHub 은 공개 저장소에서 60일간 저장소 활동이 없으면 예약 워크플로를
+# 비활성화한다. 방학처럼 기여가 없는 기간이 길어지면 봇 커밋도 발생하지 않으므로
+# 해당될 수 있다. 비활성화 전에 조직 소유자에게 메일이 발송되며, 아무 커밋이나
+# 수동 실행으로 다시 살릴 수 있다.
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'profile/README.template.md'
+      - 'scripts/build_profile.py'
+      - '.github/workflows/update-profile.yml'
   schedule:
-    - cron: '0 21 * * *'   # 매일 06:00 KST — 콘텐츠만
-    - cron: '30 21 * * 0'  # 매주 월 06:30 KST — 콘텐츠 + 멤버 활동
+    - cron: '30 21 * * 0'  # 매주 월 06:30 KST — 멤버 활동 갱신
   workflow_dispatch:
     inputs:
       refresh_activity:
@@ -50,25 +57,14 @@ jobs:
           # 공개 기여로만 한정하려는 의도와 정확히 맞는다.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EVENT_NAME: ${{ github.event_name }}
-          SCHEDULE: ${{ github.event.schedule }}
           INPUT_REFRESH: ${{ inputs.refresh_activity }}
         run: |
           set -euo pipefail
-          WEEKLY_CRON='30 21 * * 0'
           case "$EVENT_NAME" in
-            schedule)
-              if [ "$SCHEDULE" = "$WEEKLY_CRON" ]; then
-                REFRESH_ACTIVITY=true
-              else
-                REFRESH_ACTIVITY=false
-              fi
-              ;;
-            workflow_dispatch)
-              REFRESH_ACTIVITY="${INPUT_REFRESH:-true}"
-              ;;
-            *)
-              REFRESH_ACTIVITY=true
-              ;;
+            push)              REFRESH_ACTIVITY=false ;;
+            schedule)          REFRESH_ACTIVITY=true ;;
+            workflow_dispatch) REFRESH_ACTIVITY="${INPUT_REFRESH:-true}" ;;
+            *)                 REFRESH_ACTIVITY=true ;;
           esac
           echo "refresh_activity=$REFRESH_ACTIVITY"
           REFRESH_ACTIVITY="$REFRESH_ACTIVITY" python scripts/build_profile.py
