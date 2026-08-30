@@ -1,12 +1,12 @@
 {
   "year": 2026,
-  "as_of": "2026-08-26",
+  "as_of": "2026-08-31",
   "members": [
     {
       "login": "kwonjeomsim",
       "url": "https://github.com/kwonjeomsim",
       "commits": 9,
-      "pull_requests": 7,
+      "pull_requests": 8,
       "repos": [
         {
           "name_with_owner": "Samsung/escargot",
@@ -18,7 +18,7 @@
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
           "commits": 3,
-          "pull_requests": 3
+          "pull_requests": 4
         },
         {
           "name_with_owner": "JBNU-CILAB/escargot",
