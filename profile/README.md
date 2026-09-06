@@ -48,12 +48,12 @@ engines, find the bottlenecks, and upstream the fixes.
 
 | Member | Active in |
 | --- | --- |
-| [@kwonjeomsim](https://github.com/kwonjeomsim) | [`Samsung/escargot`](https://github.com/Samsung/escargot), [`Samsung/walrus`](https://github.com/Samsung/walrus), [`JBNU-CILAB/escargot`](https://github.com/JBNU-CILAB/escargot), [`JBNU-CILAB/walrus`](https://github.com/JBNU-CILAB/walrus) |
+| [@kwonjeomsim](https://github.com/kwonjeomsim) | [`Samsung/walrus`](https://github.com/Samsung/walrus), [`Samsung/escargot`](https://github.com/Samsung/escargot), [`JBNU-CILAB/escargot`](https://github.com/JBNU-CILAB/escargot), [`JBNU-CILAB/walrus`](https://github.com/JBNU-CILAB/walrus) |
 | [@M-SE0K](https://github.com/M-SE0K) | [`JBNU-CILAB/JCodeQuest`](https://github.com/JBNU-CILAB/JCodeQuest), [`JBNU-CILAB/escargot-review-bot`](https://github.com/JBNU-CILAB/escargot-review-bot), [`Samsung/walrus`](https://github.com/Samsung/walrus) |
 | [@comts224](https://github.com/comts224) | [`JBNU-CILAB/JCodeQuest`](https://github.com/JBNU-CILAB/JCodeQuest) |
 | [@makachanm](https://github.com/makachanm) | [`JBNU-CILAB/JCodeQuest`](https://github.com/JBNU-CILAB/JCodeQuest), [`Samsung/walrus`](https://github.com/Samsung/walrus) |
 | [@hyraxbyerax](https://github.com/hyraxbyerax) | [`Samsung/walrus`](https://github.com/Samsung/walrus) |
 | [@Luca388](https://github.com/Luca388) | [`Samsung/walrus`](https://github.com/Samsung/walrus) |
 
-In 2026 the lab made **222** commits and **43** pull requests across **6** public repositories.
+In 2026 the lab made **224** commits and **43** pull requests across **6** public repositories.
 <!-- AUTO:ACTIVITY:END -->
