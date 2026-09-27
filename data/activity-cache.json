@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "as_of": "2026-09-21",
+  "as_of": "2026-09-28",
   "members": [
     {
       "login": "kwonjeomsim",
@@ -78,7 +78,7 @@
       "login": "makachanm",
       "url": "https://github.com/makachanm",
       "commits": 96,
-      "pull_requests": 9,
+      "pull_requests": 10,
       "repos": [
         {
           "name_with_owner": "JBNU-CILAB/JCodeQuest",
@@ -90,7 +90,7 @@
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
           "commits": 14,
-          "pull_requests": 9
+          "pull_requests": 10
         }
       ]
     },
