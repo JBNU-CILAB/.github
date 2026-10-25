@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "as_of": "2026-10-19",
+  "as_of": "2026-10-26",
   "members": [
     {
       "login": "kwonjeomsim",
@@ -77,7 +77,7 @@
     {
       "login": "makachanm",
       "url": "https://github.com/makachanm",
-      "commits": 101,
+      "commits": 103,
       "pull_requests": 13,
       "repos": [
         {
@@ -89,7 +89,7 @@
         {
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
-          "commits": 19,
+          "commits": 21,
           "pull_requests": 13
         }
       ]
