@@ -1,24 +1,30 @@
 {
   "year": 2026,
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-16",
   "members": [
     {
       "login": "kwonjeomsim",
       "url": "https://github.com/kwonjeomsim",
-      "commits": 12,
-      "pull_requests": 9,
+      "commits": 15,
+      "pull_requests": 10,
       "repos": [
         {
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
-          "commits": 6,
-          "pull_requests": 5
+          "commits": 7,
+          "pull_requests": 6
         },
         {
           "name_with_owner": "Samsung/escargot",
           "url": "https://github.com/Samsung/escargot",
           "commits": 6,
           "pull_requests": 1
+        },
+        {
+          "name_with_owner": "JBNU-CILAB/PDF-Sign-Collector",
+          "url": "https://github.com/JBNU-CILAB/PDF-Sign-Collector",
+          "commits": 2,
+          "pull_requests": 0
         },
         {
           "name_with_owner": "JBNU-CILAB/escargot",
@@ -77,8 +83,8 @@
     {
       "login": "makachanm",
       "url": "https://github.com/makachanm",
-      "commits": 105,
-      "pull_requests": 17,
+      "commits": 106,
+      "pull_requests": 19,
       "repos": [
         {
           "name_with_owner": "JBNU-CILAB/JCodeQuest",
@@ -89,8 +95,8 @@
         {
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
-          "commits": 23,
-          "pull_requests": 17
+          "commits": 24,
+          "pull_requests": 19
         }
       ]
     },
