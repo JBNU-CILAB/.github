@@ -1,18 +1,24 @@
 {
   "year": 2026,
-  "as_of": "2026-11-16",
+  "as_of": "2026-11-23",
   "members": [
     {
       "login": "kwonjeomsim",
       "url": "https://github.com/kwonjeomsim",
-      "commits": 15,
-      "pull_requests": 10,
+      "commits": 22,
+      "pull_requests": 11,
       "repos": [
         {
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
           "commits": 7,
           "pull_requests": 6
+        },
+        {
+          "name_with_owner": "JBNU-CILAB/WASMBench",
+          "url": "https://github.com/JBNU-CILAB/WASMBench",
+          "commits": 7,
+          "pull_requests": 1
         },
         {
           "name_with_owner": "Samsung/escargot",
@@ -83,8 +89,8 @@
     {
       "login": "makachanm",
       "url": "https://github.com/makachanm",
-      "commits": 106,
-      "pull_requests": 19,
+      "commits": 121,
+      "pull_requests": 21,
       "repos": [
         {
           "name_with_owner": "JBNU-CILAB/JCodeQuest",
@@ -95,8 +101,14 @@
         {
           "name_with_owner": "Samsung/walrus",
           "url": "https://github.com/Samsung/walrus",
-          "commits": 24,
-          "pull_requests": 19
+          "commits": 26,
+          "pull_requests": 20
+        },
+        {
+          "name_with_owner": "JBNU-CILAB/WASMBench",
+          "url": "https://github.com/JBNU-CILAB/WASMBench",
+          "commits": 13,
+          "pull_requests": 1
         }
       ]
     },
